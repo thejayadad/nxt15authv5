@@ -1,5 +1,4 @@
-'use client'
-
+'use server'
 import { BackButton } from "./back-button";
 import FormHeader from "./form-header";
 import SocialLogin from "./social-login";
@@ -12,7 +11,7 @@ interface FormWrapperProps {
     showSocial?: boolean
 }
 
-export const FormWapper = ({children, titleLabel, backButtonHref, backButtonLabel, showSocial}: FormWrapperProps) => {
+export const FormWapper = async ({children, titleLabel, backButtonHref, backButtonLabel, showSocial}: FormWrapperProps) => {
     return (
         <div className="w-[400px] shadow-sm rounded-md">
             <FormHeader titleLabel={titleLabel} />

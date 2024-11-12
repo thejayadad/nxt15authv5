@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import { FormWapper } from './form-wrapper'
 import { SubmitButton } from './submit-button'
@@ -13,7 +12,7 @@ const LoginForm = () => {
     showSocial
     >
         <form
-        action={login}
+
         >
             <div className='flex flex-col gap-1'>
             <span className="label-text">Email</span>

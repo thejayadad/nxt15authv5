@@ -99,3 +99,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
 ```
 - Login Function
+- update the form then test it out
+
+
+##GOOGLE LOGIN
