@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { getAllClients } from '@/lib/action/clients/get-all-clients';
 import Link from 'next/link';
+import DeleteButton from '../button/delete-btn';
 
 const ClientTable = ({ userEmail }: { userEmail: string }) => {
   const [clients, setClients] = useState<any[]>([]);
@@ -59,7 +60,9 @@ const ClientTable = ({ userEmail }: { userEmail: string }) => {
                 <Link href={`/client/${client._id}`}>
                   Update
                 </Link>
-                <div>Delete</div>
+                <div>
+                  <DeleteButton id={client._id} />
+                </div>
               </td>
             </tr>
           ))}

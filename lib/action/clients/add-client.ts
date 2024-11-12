@@ -51,15 +51,16 @@ export const addClient = async (prevState: any, formData: FormData) => {
     });
 
 
-    return { success: true, client: newClient };
   } catch (error) {
     console.error("Error adding client:", error);
     return {
       error: "Failed to add client. Please try again."
     };
-  }
 
-    // Optionally revalidate and redirect
-    revalidatePath("/dashboard");
-    redirect("/dashboard");
+
+  }
+     // Optionally revalidate and redirect
+     revalidatePath("/dashboard");
+     redirect("/dashboard");
+
 };

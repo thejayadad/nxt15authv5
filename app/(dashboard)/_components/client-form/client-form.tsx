@@ -29,11 +29,6 @@ const ClientForm: React.FC<ClientFormProps> = ({ userEmail }) => {
 
     const response = await addClient({}, formData); // Call the addClient function
 
-    if (response.error) {
-      setErrors(response.error); // Set errors if validation fails
-    } else {
-      // Handle success (e.g., show success message or redirect)
-    }
   };
 
   return (
