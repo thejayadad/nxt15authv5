@@ -12,7 +12,7 @@ const LoginForm = () => {
     showSocial
     >
         <form
-
+          action={login}
         >
             <div className='flex flex-col gap-1'>
             <span className="label-text">Email</span>
