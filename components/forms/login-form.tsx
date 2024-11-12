@@ -2,8 +2,12 @@ import React from 'react'
 import { FormWapper } from './form-wrapper'
 import { SubmitButton } from './submit-button'
 import { login } from '@/lib/action/user/login-user'
+import { cookies } from "next/headers";
 
-const LoginForm = () => {
+
+const LoginForm = async () => {
+  const csrfToken = (await cookies()).get("authjs.csrf-token")?.value ?? "";
+
   return (
     <FormWapper
     titleLabel='Hey there, Welcome Back!'
@@ -14,6 +18,7 @@ const LoginForm = () => {
         <form
           action={login}
         >
+          <input type="hidden" name="csrfToken" value={csrfToken} />
             <div className='flex flex-col gap-1'>
             <span className="label-text">Email</span>
             <input id='email' name='email' type="text" placeholder="Email" className="input input-bordered w-full" />
