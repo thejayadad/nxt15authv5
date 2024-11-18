@@ -8,7 +8,7 @@ import React from 'react'
 const LoginPage = async () => {
   const session = await getSession();
   const user = session?.user;
-  if (user) redirect("/");
+  if (user) redirect("/dashboard");
   return (
     <div>
       <LoginForm />

@@ -4,6 +4,7 @@ import { getSession } from '@/lib/getSession';
 import StatCard from '../_components/stat-card/stat-card';
 import SearchForm from '../_components/search/search-form';
 import ClientTable from '../_components/clients/client-table';
+import { redirect } from 'next/navigation';
 
 
 const DashboardPage = async () => {
@@ -12,8 +13,8 @@ const DashboardPage = async () => {
   const user = session?.user;
   const userEmail = user?.email;
 
-  if (!userEmail) {
-    return <div>Please log in to view your dashboard.</div>; // Handle cases where userEmail is not available
+  if (!session) {
+    redirect("/login")
   }
 
   // Fetch the client statistics for the logged-in user
